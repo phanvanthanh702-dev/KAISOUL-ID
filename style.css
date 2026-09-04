@@ -1,0 +1,786 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #111827;
+  --primary-hover: #000000;
+  --input-bg: #ffffff;
+  --soft: #f3f4f6;
+  --danger: #dc2626;
+}
+
+body.dark {
+  --bg: #0b0f14;
+  --card: #11161d;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --border: #26303b;
+  --primary: #f3f4f6;
+  --primary-hover: #ffffff;
+  --input-bg: #151b23;
+  --soft: #1a212b;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+  min-height: 100vh;
+}
+
+
+/* =========================
+   AUTH
+========================= */
+
+.auth-container {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.brand-mark {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: var(--primary);
+  color: var(--bg);
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.brand h1 {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand p {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 26px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+form {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin: 15px 0 7px;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--input-bg);
+  color: var(--text);
+
+  padding: 0 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+input:focus {
+  border-color: var(--text);
+
+  box-shadow:
+    0 0 0 3px rgba(107, 114, 128, 0.12);
+}
+
+
+/* =========================
+   USERNAME PREFIX
+========================= */
+
+.input-prefix {
+  display: flex;
+  align-items: center;
+
+  height: 48px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--input-bg);
+
+  overflow: hidden;
+}
+
+.input-prefix span {
+  padding-left: 14px;
+
+  color: var(--muted);
+
+  font-weight: 600;
+}
+
+.input-prefix input {
+  height: 46px;
+
+  border: 0;
+  border-radius: 0;
+
+  padding-left: 5px;
+
+  box-shadow: none;
+}
+
+.input-prefix:focus-within {
+  border-color: var(--text);
+
+  box-shadow:
+    0 0 0 3px rgba(107, 114, 128, 0.12);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn {
+  width: 100%;
+  height: 48px;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.12s ease,
+    opacity 0.12s ease,
+    background 0.12s ease;
+}
+
+.primary-btn {
+  margin-top: 20px;
+
+  border: 0;
+
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.primary-btn:hover {
+  background: var(--primary-hover);
+}
+
+.primary-btn:active,
+.secondary-btn:active {
+  transform: scale(0.98);
+}
+
+.secondary-btn {
+  border: 1px solid var(--border);
+
+  background: var(--card);
+  color: var(--text);
+}
+
+.secondary-btn:hover {
+  background: var(--soft);
+}
+
+.text-btn {
+  display: block;
+
+  margin: 15px auto 0;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.text-btn:hover {
+  color: var(--text);
+}
+
+.back-btn {
+  border: 0;
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  margin-bottom: 18px;
+}
+
+.back-btn:hover {
+  color: var(--text);
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 22px 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background: var(--border);
+}
+
+
+/* =========================
+   GENERATED ID
+========================= */
+
+.generated-id {
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--soft);
+}
+
+.generated-label {
+  color: var(--muted);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+
+  margin-bottom: 7px;
+}
+
+#generatedKaisoulId {
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+.generated-id small,
+.field-hint {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.field-hint {
+  margin-top: 6px;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid var(--border);
+
+  background: var(--card);
+}
+
+.topbar-brand {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.small-btn {
+  height: 38px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--card);
+  color: var(--text);
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.small-btn:hover {
+  background: var(--soft);
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-container {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  padding: 35px 20px;
+}
+
+.profile-card {
+  text-align: center;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 22px;
+
+  padding: 30px 22px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar-wrap {
+  width: 104px;
+  height: 104px;
+
+  margin: 0 auto 18px;
+
+  position: relative;
+}
+
+
+/*
+  Avatar mặc định:
+  silhouette người vô danh.
+  Không mắt.
+  Không miệng.
+  Không hai chấm.
+*/
+
+.default-avatar {
+  width: 104px;
+  height: 104px;
+
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: var(--soft);
+
+  border: 1px solid var(--border);
+}
+
+.avatar-head {
+  width: 34px;
+  height: 34px;
+
+  margin-top: 20px;
+
+  border-radius: 50%;
+
+  background: var(--muted);
+}
+
+.avatar-body {
+  width: 66px;
+  height: 40px;
+
+  margin-top: 7px;
+
+  border-radius: 38px 38px 0 0;
+
+  background: var(--muted);
+}
+
+
+/* REAL AVATAR */
+
+.avatar-image {
+  width: 104px;
+  height: 104px;
+
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--border);
+}
+
+
+/* =========================
+   PROFILE TEXT
+========================= */
+
+.profile-card h2 {
+  font-size: 23px;
+  font-weight: 800;
+
+  overflow-wrap: anywhere;
+}
+
+.username {
+  margin-top: 3px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.bio {
+  margin: 18px auto;
+
+  max-width: 400px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   KAISOUL ID DISPLAY
+========================= */
+
+.profile-id {
+  margin: 20px 0;
+
+  padding: 16px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  background: var(--soft);
+}
+
+.profile-id span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+
+.profile-id strong {
+  display: block;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 13px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   PROFILE INFO
+========================= */
+
+.profile-info {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+}
+
+.profile-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profile-info span {
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.profile-info strong {
+  font-size: 14px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+  position: fixed;
+
+  left: 50%;
+  bottom: 20px;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 40px);
+  max-width: 420px;
+
+  padding: 13px 15px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  background: var(--card);
+
+  color: var(--text);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12);
+
+  text-align: center;
+
+  font-size: 13px;
+
+  z-index: 9999;
+}
+
+
+/* =========================
+   DISABLED
+========================= */
+
+button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .auth-container {
+    padding:
+      28px 15px 35px;
+  }
+
+  .brand {
+    margin-bottom: 22px;
+  }
+
+  .brand h1 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 21px 18px;
+
+    border-radius: 18px;
+  }
+
+  .profile-container {
+    padding:
+      25px 15px 35px;
+  }
+
+  .profile-card {
+    padding:
+      27px 18px;
+
+    border-radius: 19px;
+  }
+
+  .topbar {
+    padding:
+      14px 15px;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+
+                  }
