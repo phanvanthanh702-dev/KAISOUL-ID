@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#ffffff"
+  >
+
+  <meta
+    name="description"
+    content="KAISOUL ID - Hệ thống tài khoản KAISOUL"
+  >
+
+  <title>KAISOUL ID</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+<div id="app">
+
+  <!-- ==================================================
+       AUTH SCREEN
+  =================================================== -->
+
+  <section
+    id="authScreen"
+    class="screen"
+  >
+
+    <div class="auth-container">
+
+
+      <!-- BRAND -->
+
+      <div class="brand">
+
+        <div
+          class="brand-mark"
+          aria-hidden="true"
+        >
+          K
+        </div>
+
+        <h1>
+          KAISOUL ID
+        </h1>
+
+        <p>
+          Tài khoản dùng chung cho hệ sinh thái KAISOUL
+        </p>
+
+      </div>
+
+
+      <!-- ==================================================
+           LOGIN
+      =================================================== -->
+
+      <div
+        id="loginPage"
+        class="auth-page"
+      >
+
+        <div class="card">
+
+          <h2>
+            Đăng nhập
+          </h2>
+
+          <p class="subtitle">
+            Đăng nhập vào KAISOUL ID
+          </p>
+
+
+          <form
+            id="loginForm"
+            method="post"
+            autocomplete="on"
+            novalidate
+          >
+
+            <!-- USERNAME / EMAIL / PHONE -->
+
+            <label for="loginIdentifier">
+              Username / Email / SĐT
+            </label>
+
+            <input
+              id="loginIdentifier"
+              name="identifier"
+              type="text"
+              placeholder="@username, email hoặc số điện thoại"
+              autocomplete="username"
+              autocapitalize="none"
+              spellcheck="false"
+              inputmode="text"
+              required
+            >
+
+
+            <!-- PASSWORD -->
+
+            <label for="loginPassword">
+              Mật khẩu
+            </label>
+
+            <input
+              id="loginPassword"
+              name="password"
+              type="password"
+              placeholder="Nhập mật khẩu"
+              autocomplete="current-password"
+              required
+            >
+
+
+            <!-- LOGIN -->
+
+            <button
+              type="submit"
+              id="loginSubmitBtn"
+              class="primary-btn"
+            >
+              Đăng nhập
+            </button>
+
+          </form>
+
+
+          <!-- FORGOT PASSWORD -->
+
+          <button
+            type="button"
+            id="forgotPasswordBtn"
+            class="text-btn"
+          >
+            Quên mật khẩu?
+          </button>
+
+
+          <!-- DIVIDER -->
+
+          <div class="divider">
+            <span>
+              hoặc
+            </span>
+          </div>
+
+
+          <!-- CREATE ACCOUNT -->
+
+          <button
+            type="button"
+            id="showRegisterBtn"
+            class="secondary-btn"
+          >
+            Tạo KAISOUL ID
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================
+           REGISTER
+      =================================================== -->
+
+      <div
+        id="registerPage"
+        class="auth-page hidden"
+      >
+
+        <div class="card">
+
+
+          <!-- BACK -->
+
+          <button
+            type="button"
+            id="backLoginBtn"
+            class="back-btn"
+          >
+            ← Quay lại
+          </button>
+
+
+          <h2>
+            Tạo KAISOUL ID
+          </h2>
+
+          <p class="subtitle">
+            Tạo tài khoản KAISOUL của bạn
+          </p>
+
+
+          <form
+            id="registerForm"
+            method="post"
+            autocomplete="on"
+            novalidate
+          >
+
+
+            <!-- ==================================================
+                 DISPLAY NAME
+            =================================================== -->
+
+            <label for="registerName">
+              Tên hiển thị
+            </label>
+
+            <input
+              id="registerName"
+              name="displayName"
+              type="text"
+              placeholder="Tên của bạn"
+              maxlength="50"
+              autocomplete="name"
+              required
+            >
+
+
+            <!-- ==================================================
+                 USERNAME
+            =================================================== -->
+
+            <label for="registerUsername">
+              Username
+            </label>
+
+            <div class="input-prefix">
+
+              <span
+                aria-hidden="true"
+              >
+                @
+              </span>
+
+              <input
+                id="registerUsername"
+                name="username"
+                type="text"
+                placeholder="username"
+                maxlength="30"
+                minlength="3"
+                autocomplete="username"
+                autocapitalize="none"
+                spellcheck="false"
+                pattern="[a-z0-9._]+"
+                title="Username chỉ được chứa chữ thường, số, dấu chấm và dấu gạch dưới."
+                required
+              >
+
+            </div>
+
+
+            <!-- ==================================================
+                 PASSWORD
+            =================================================== -->
+
+            <label for="registerPassword">
+              Mật khẩu
+            </label>
+
+            <input
+              id="registerPassword"
+              name="password"
+              type="password"
+              placeholder="Tạo mật khẩu"
+              minlength="8"
+              autocomplete="new-password"
+              required
+            >
+
+
+            <!-- ==================================================
+                 CONFIRM PASSWORD
+            =================================================== -->
+
+            <label for="registerConfirmPassword">
+              Xác nhận mật khẩu
+            </label>
+
+            <input
+              id="registerConfirmPassword"
+              name="confirmPassword"
+              type="password"
+              placeholder="Nhập lại mật khẩu"
+              minlength="8"
+              autocomplete="new-password"
+              required
+            >
+
+
+            <!-- ==================================================
+                 EMAIL / PHONE
+            =================================================== -->
+
+            <label for="registerContact">
+              Email / SĐT
+            </label>
+
+            <input
+              id="registerContact"
+              name="contact"
+              type="text"
+              inputmode="email"
+              placeholder="Email hoặc số điện thoại"
+              autocomplete="email"
+              spellcheck="false"
+              required
+            >
+
+            <small
+              class="field-hint"
+              id="contactHint"
+            >
+              Dùng email hoặc số điện thoại để xác minh tài khoản.
+            </small>
+
+
+            <!-- ==================================================
+                 GENERATED KAISOUL ID
+            =================================================== -->
+
+            <div
+              class="generated-id"
+              aria-live="polite"
+            >
+
+              <div class="generated-label">
+                KAISOUL ID
+              </div>
+
+              <div
+                id="generatedKaisoulId"
+                data-immutable="true"
+              >
+                SODK-000000/001//KAISOULID
+              </div>
+
+              <small>
+                KAISOUL ID được hệ thống tự động cấp
+                và không thể thay đổi.
+              </small>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <button
+              type="submit"
+              id="registerSubmitBtn"
+              class="primary-btn"
+            >
+              Tạo tài khoản
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       PROFILE SCREEN
+  =================================================== -->
+
+  <section
+    id="profileScreen"
+    class="screen hidden"
+  >
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+      <div class="topbar-brand">
+        KAISOUL ID
+      </div>
+
+      <button
+        type="button"
+        id="logoutBtn"
+        class="small-btn"
+      >
+        Đăng xuất
+      </button>
+
+    </header>
+
+
+    <!-- PROFILE -->
+
+    <main class="profile-container">
+
+      <div class="profile-card">
+
+
+        <!-- ==================================================
+             AVATAR
+        =================================================== -->
+
+        <div class="avatar-wrap">
+
+
+          <!--
+            DEFAULT AVATAR
+
+            Silhouette người vô danh.
+            Không có mắt.
+            Không có miệng.
+            Không có hai chấm.
+          -->
+
+          <div
+            id="avatarDefault"
+            class="default-avatar"
+            role="img"
+            aria-label="Avatar mặc định"
+          >
+
+            <div
+              class="avatar-head"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="avatar-body"
+              aria-hidden="true"
+            ></div>
+
+          </div>
+
+
+          <!--
+            USER AVATAR
+
+            Không đặt src=""
+            JS chỉ thêm src khi có avatar thật.
+          -->
+
+          <img
+            id="avatarImage"
+            class="avatar-image hidden"
+            alt="Ảnh đại diện"
+          >
+
+        </div>
+
+
+        <!-- ==================================================
+             DISPLAY NAME
+        =================================================== -->
+
+        <h2 id="profileName">
+          Tên hiển thị
+        </h2>
+
+
+        <!-- USERNAME -->
+
+        <p
+          id="profileUsername"
+          class="username"
+        >
+          @username
+        </p>
+
+
+        <!-- ==================================================
+             KAISOUL ID
+        =================================================== -->
+
+        <div class="profile-id">
+
+          <span>
+            KAISOUL ID
+          </span>
+
+          <strong
+            id="profileKaisoulId"
+            data-immutable="true"
+          >
+            SODK-000000/001//KAISOULID
+          </strong>
+
+        </div>
+
+
+        <!-- ==================================================
+             BIO
+        =================================================== -->
+
+        <p
+          id="profileBio"
+          class="bio"
+        >
+          Chưa có giới thiệu.
+        </p>
+
+
+        <!-- ==================================================
+             JOIN DATE
+        =================================================== -->
+
+        <div class="profile-info">
+
+          <div>
+
+            <span>
+              Ngày tham gia
+            </span>
+
+            <strong id="profileDate">
+              --/--/----
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- ACCOUNT -->
+
+        <button
+          type="button"
+          id="accountBtn"
+          class="secondary-btn"
+        >
+          Quản lý tài khoản
+        </button>
+
+      </div>
+
+    </main>
+
+  </section>
+
+</div>
+
+
+<!-- ==================================================
+     GLOBAL MESSAGE
+=================================================== -->
+
+<div
+  id="message"
+  class="message hidden"
+  role="alert"
+  aria-live="polite"
+></div>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+=================================================== -->
+
+<script src="app.js"></script>
+
+</body>
+              </html>
